@@ -1,0 +1,87 @@
+.container {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: rgba(63, 58, 58, 0.825);
+}
+
+
+h1 {
+    text-align: center;
+    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #e82828; 
+    background-color: #000000be;
+    padding: 20px; 
+}
+
+.formulario {
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+}
+
+.info {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 3px; 
+}
+
+#sabores {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#enviar {
+    width: 100%;
+    padding: 10px;
+    background-color: #e82828; 
+    color: #fff; 
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#enviar:hover {
+    background-color: #c71515; 
+}
+
+.logos-bottom {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(63, 58, 58, 0.825);  
+    padding: 10px; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.logos-bottom .logo-left img {
+    max-width: 150px; 
+    height:auto; 
+    font-size: 14px; 
+}
+
+.logos-bottom .logo-middle img {
+    max-width: 100px; 
+    height: auto; 
+    font-size: 16px; 
+}
+
+.logos-bottom .logo-right img {
+    max-width: 100px; 
+    height: auto; 
+    font-size: 14px; 
+}
+
+
+
+
+

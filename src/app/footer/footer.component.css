@@ -1,0 +1,67 @@
+
+.container {
+    background-color: #ff0000;
+    height: 20%;
+}
+
+.main-f {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 35%;
+}
+.footer {
+    display: flex;
+    width: 500px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+.logo img {
+    width: 200px;
+    height: 200px;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    padding: 30px;
+}
+
+.redes img {
+    width: 70px;
+    height: 70px;
+}
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.footer a:hover {
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 0.6;
+    transition: 0.9s;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+}
+
+.copy {
+    display: flex;
+    width: 100%;
+}
