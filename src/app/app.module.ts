@@ -7,6 +7,9 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { AdminComponent } from './admin/admin.component';
+import { FiltroPipe } from './main/pipes/filtro.pipe';
+import { EditComponent } from './admin/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     MainComponent,
     FooterComponent,
     InicioComponent,
-    PedidosComponent
+    PedidosComponent,
+    AdminComponent,
+    FiltroPipe,
+    EditComponent
   ],
   imports: [
     BrowserModule,
