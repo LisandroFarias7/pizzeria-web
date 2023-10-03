@@ -11,25 +11,25 @@ export class MenuService {
   
   constructor(@InjectRepository(Menu) private menuRepository: Repository<Menu> ) {}
   
-  create(menu: CreateMenuDto): Promise<Menu>{
+  async create(menu: CreateMenuDto): Promise<Menu>{
     const newMenu = this.menuRepository.create(menu);
-    return this.menuRepository.save(newMenu)
+    return await this.menuRepository.save(newMenu)
   }
 
- getAll() {
-    return this.menuRepository.find();
+ async getAll() {
+    return await this.menuRepository.find();
   }
 
-  getOne(id: string) {
-    return this.menuRepository.findOne({
+  async getOne(id: string) {
+    return await this.menuRepository.findOne({
       where: {
         id
       }
     })
   }
 
-  update(id: string, updateMenuDto: UpdateMenuDto) {
-    return this.menuRepository.update({id}, updateMenuDto);
+  async update(id: string, updateMenuDto: UpdateMenuDto) {
+    return await this.menuRepository.update({id}, updateMenuDto);
   }
 
   async remove(id: string) {
