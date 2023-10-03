@@ -1,35 +1,52 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpException, HttpStatus } from '@nestjs/common';
 import { MenuService } from './menu.service';
 import { CreateMenuDto } from './dto/create-menu.dto';
 import { UpdateMenuDto } from './dto/update-menu.dto';
+import { ValidationPipe } from '@nestjs/common'; // Importa ValidationPipe de NestJS
 
 @Controller('menu')
 export class MenuController {
   constructor(private readonly menuService: MenuService) {}
 
   @Post()
-  create(@Body() createMenuDto: CreateMenuDto) {
-    return this.menuService.create(createMenuDto);
+  async create(@Body(new ValidationPipe()) createMenuDto: CreateMenuDto) {
+    // Utiliza el ValidationPipe para aplicar las validaciones
+    const menu = await this.menuService.create(createMenuDto);
+    return menu;
   }
 
   @Get()
-  getAll() {
-    return this.menuService.getAll();
+  async getAll() {
+    const menus = await this.menuService.getAll();
+    return menus;
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.menuService.getOne(id);
+  async findOne(@Param('id') id: string) {
+    const menu = await this.menuService.getOne(id);
+    if (!menu) {
+      throw new HttpException('Menú no encontrado', HttpStatus.NOT_FOUND);
+    }
+    return menu;
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMenuDto: UpdateMenuDto) {
-    return this.menuService.update(id, updateMenuDto);
+  async update(@Param('id') id: string, @Body(new ValidationPipe()) updateMenuDto: UpdateMenuDto) {
+    // Utiliza el ValidationPipe para aplicar las validaciones
+    const updatedMenu = await this.menuService.update(id, updateMenuDto);
+    if (!updatedMenu) {
+      throw new HttpException('Menú no encontrado', HttpStatus.NOT_FOUND);
+    }
+    return updatedMenu;
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.menuService.remove(id);
+  async remove(@Param('id') id: string) {
+    const deletedMenu = await this.menuService.remove(id);
+    if (!deletedMenu) {
+      throw new HttpException('Menú no encontrado', HttpStatus.NOT_FOUND);
+    }
+    return deletedMenu;
   }
 }

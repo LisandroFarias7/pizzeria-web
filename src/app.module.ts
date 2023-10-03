@@ -1,11 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { Module } from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
+import { APP_PIPE } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientModule } from './client/client.module';
 import { MenuModule } from './menu/menu.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -24,6 +26,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true
   })],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,
+    {
+      provide: APP_PIPE, // Usamos APP_PIPE para configurar un pipe global
+      useClass: ValidationPipe, // Usamos ValidationPipe para validación
+      // Puedes configurar opciones adicionales aquí si es necesario
+    }],
 })
 export class AppModule {}
