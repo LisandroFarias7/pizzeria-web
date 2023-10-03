@@ -9,6 +9,8 @@ import { Menu } from '../interfaces/menu';
 })
 export class MainComponent implements OnInit{
 
+  public page: number = 0;
+
   menu: Menu[] = []
   public search: string = '';
 
@@ -29,7 +31,18 @@ export class MainComponent implements OnInit{
       )
   }
 
+  nextPage() {
+    this.page += 6
+  }
+
+  prevPage() {
+    if (this.page > 0) {
+      this.page -= 6
+    }
+  }
+
   searchMenu(search: string) {
+    this.page = 0;
     this.search = search;
   }
 }

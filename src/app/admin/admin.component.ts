@@ -9,12 +9,13 @@ import { Menu } from '../interfaces/menu';
 })
 export class AdminComponent implements OnInit{
 
-    menu: Menu[] = []
+    public menu: Menu[] = []
 
     constructor(private menuServices: MenuService) {
       
     }
     ngOnInit(): void {
+      this.getAll()
     }
 
 

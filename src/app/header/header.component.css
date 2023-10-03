@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: center;
     height: 50vh;
+    position: static;
 }
 
 img {

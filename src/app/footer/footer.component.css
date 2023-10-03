@@ -1,7 +1,9 @@
 
 .container {
     background-color: #ff0000;
-    height: 20%;
+    width: 100vw;
+    height: 50%;
+    scroll-behavior: none;
 }
 
 .main-f {

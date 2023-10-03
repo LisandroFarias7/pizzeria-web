@@ -14,19 +14,23 @@ export class MenuService {
 
   constructor(private http: HttpClient) { }
 
-  async getMenu(): Promise<Observable<Menu[]>> {
-    return await this.http.get<Menu[]>(`${this.BASE_URL}/menu`)
+  getMenu(): Observable<Menu[]> {
+    return this.http.get<Menu[]>(`${this.BASE_URL}/menu`)
   }
 
-  async getMenuId(id: string): Promise<Observable<Menu>> {
-    return await this.http.get<Menu>(`${this.BASE_URL}/menu/${id}`)
+  getMenuId(id: string): Observable<Menu> {
+    return this.http.get<Menu>(`${this.BASE_URL}/menu/${id}`)
   }
 
-  async deleteMenu(id: string): Promise<Observable<Menu>> {
-    return await this.http.delete<Menu>(`${this.BASE_URL}/admin/${id}`)
+  deleteMenu(id: string): Observable<Menu> {
+    return this.http.delete<Menu>(`${this.BASE_URL}/menu/${id}`)
   }
 
-  async updateMenu(id:string, menu: Menu): Promise<Observable<Menu>> {
-    return await this.http.put<Menu>(`${this.BASE_URL}/admin/edit`, menu)
+  updateMenu(id:string, menu: Menu): Observable<Menu> {
+    return this.http.put<Menu>(`${this.BASE_URL}/menu/edit/${id}`, menu)
+  }
+
+  createMenu(menu: Menu): Observable<Menu> {
+    return this.http.post<Menu>(`${this.BASE_URL}/menu`, menu)
   }
 }

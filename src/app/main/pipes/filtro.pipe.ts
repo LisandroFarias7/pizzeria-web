@@ -7,7 +7,14 @@ import { Menu } from 'src/app/interfaces/menu';
 export class FiltroPipe implements PipeTransform {
 
   transform(menu: Menu[],page: number = 0, search: string = ''): Menu[] {
-    return [];
+
+    if(search.length === 0) {
+      return menu.slice(page, page + 6)
+    } 
+    
+    const filteredMenu = menu.filter(pizza => pizza.descripcion.includes( search ))
+    return filteredMenu.slice(page, page + 6);
+    
   }
 
 }

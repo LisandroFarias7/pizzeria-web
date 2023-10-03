@@ -1,1 +1,18 @@
-
+<div class="container-admin">
+    <div class="title">
+        <h1>ADMINISTRADOR DEL <strong>MENU</strong></h1>
+    </div>
+    <div class="container-card">
+        <div class="card" *ngFor="let pizza of menu">
+            <img src="{{pizza.imageUrl}}" alt="" class="img1">
+            <div class="text">
+                <h2>{{pizza.titulo}}</h2>
+                <h3>{{pizza.descripcion}}</h3>
+                <h3>${{pizza.precio}}</h3>
+                <button type="button" class="btn" (click)="deleteMenu(pizza.id)">ELIMINAR</button>
+                <button type="button" class="btn" [routerLink]="['/admin/edit', pizza.id]">EDITAR</button>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn" routerLink="/admin/edit">AGREGAR</button>
+</div>
