@@ -16,7 +16,7 @@ export class MenuService {
     return this.menuRepository.save(newMenu)
   }
 
-  getAll() {
+ getAll() {
     return this.menuRepository.find();
   }
 
@@ -32,7 +32,7 @@ export class MenuService {
     return this.menuRepository.update({id}, updateMenuDto);
   }
 
-  remove(id: string) {
-    return this.menuRepository.delete({id});
+  async remove(id: string) {
+    return await this.menuRepository.delete({id});
   }
 }
