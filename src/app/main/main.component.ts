@@ -21,8 +21,8 @@ export class MainComponent implements OnInit{
     this.getMenu()
   }
 
-  async getMenu() {
-    (await this.menuService.getMenu())
+   getMenu() {
+    this.menuService.getMenu()
       .subscribe(
         res => {
           this.menu = res;
@@ -44,5 +44,9 @@ export class MainComponent implements OnInit{
   searchMenu(search: string) {
     this.page = 0;
     this.search = search;
+  }
+
+  addToCart(menu: Menu) {
+    return this.menuService.addProduct(menu)
   }
 }

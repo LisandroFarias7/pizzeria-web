@@ -1,0 +1,72 @@
+
+
+.hero {
+  background-image: url("../../assets/img/big0000.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  height: 30vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4vh;
+  text-transform: uppercase;
+}
+
+.custom-section {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.text, .image {
+  flex: 1;
+  padding: 20px;
+  text-align: justify; /* Agregamos la propiedad text-align para justificar el texto */
+}
+
+.image img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666;
+  text-align: justify; 
+}
+
+.reversed-section .text {
+  order: 2;
+}
+
+.reversed-section .image {
+  order: 1;
+}

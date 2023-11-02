@@ -1,69 +1,65 @@
-
+/* Estilos para el Footer */
 .container {
-    background-color: #ff0000;
-    width: 100vw;
-    height: 50%;
-    scroll-behavior: none;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente el contenido */
+    padding: 20px;
+    position: relative; /* Agregar posición relativa para el logotipo */
 }
 
 .main-f {
     display: flex;
-    flex-direction: column;
-    justify-items: center;
     align-items: center;
-    position: absolute;
-    margin-left: 35%;
-}
-.footer {
-    display: flex;
-    width: 500px;
 }
 
+/* Estilos para la Barra de Navegación */
+.nav {
+    display: flex;
+    margin-right: 20px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #035618;
+}
+
+/* Estilos para el Logotipo */
 .logo {
     display: flex;
-    justify-content: center;
-    width: 200px;
-    height: 200px;
+    align-items: center;
+    justify-content: center; /* Centrar horizontal y verticalmente */
+    height: 100%;
+    position: absolute; /* Posición absoluta para centrar el logotipo */
+    left: 50%; /* Mover el logotipo al centro horizontal */
+    transform: translateX(-50%); /* Centrar horizontalmente el logotipo */
 }
+
 .logo img {
-    width: 200px;
-    height: 200px;
+    max-width: 100px;
+    max-height: 100%;
 }
 
-.redes {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 300px;
-    padding: 30px;
+/* Estilos para los Íconos de Redes Sociales */
+.redes a {
+    display: inline-block;
+    margin: 0 10px;
 }
 
-.redes img {
-    width: 70px;
-    height: 70px;
-}
-.footer a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px;
+.logo1, .logo2, .logo3 {
+    max-width: 30px;
+    filter: brightness(0) invert(1); 
+    transition: filter 0.3s;
 }
 
-.footer a:hover {
-    color: #000;
-    background-color: #fff;
-    border-radius: 5px;
-    opacity: 0.6;
-    transition: 0.9s;
-}
-
-.title {
-    display: flex;
-    flex-direction: row;
-}
-
-.copy {
-    display: flex;
-    width: 100%;
+.logo1:hover, .logo2:hover, .logo3:hover {
+    filter: brightness(1) invert(0);
 }

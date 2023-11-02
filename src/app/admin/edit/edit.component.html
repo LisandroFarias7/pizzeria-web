@@ -1,12 +1,14 @@
 <div class="edit-container">
     <div class="card-edit">
-        <form>
-            <input type="text" name="titulo" [(ngModel)]="menu.titulo" placeholder="Titulo" >
-            <input type="text" name="descripcion" [(ngModel)]="menu.descripcion" placeholder="Descripcion" >
-            <input type="number" name="precio" [(ngModel)]="menu.precio" placeholder="Precio" >
-            <input type="text" name="imageUrl" [(ngModel)]="menu.imageUrl" placeholder="ImageUrl" >
-            <button type="button" class="btn" (click)="edit ? updateMenu() : createMenu()">GUARDAR</button>
-            <button type="button" class="btn" routerLink="/admin">VOLVER</button>
-        </form> 
+      <form [formGroup]="form"> <!-- Enlaza el FormGroup al formulario -->
+        <input type="text" name="titulo" formControlName="titulo" placeholder="Titulo">
+        <input type="text" name="descripcion" formControlName="descripcion" placeholder="Descripcion">
+        <input type="number" name="precio" formControlName="precio" placeholder="Precio">
+        <input type="text" name="imageUrl" formControlName="imageUrl" placeholder="ImageUrl">
+        <input type="file" name="imageUrl" formControlName="imageUrl" id="">
+        <button type="button" class="btn" (click)="edit ? updateMenu() : createMenu()">GUARDAR</button>
+        <button type="button" class="btn" routerLink="/admin">VOLVER</button>
+      </form>
     </div>
-</div>
+  </div>
+  

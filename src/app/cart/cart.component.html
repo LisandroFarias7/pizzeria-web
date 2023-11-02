@@ -1,0 +1,31 @@
+<div class="productCart-wrapper" >
+    <article class="productCart">
+        <div class="product-body">
+            <div class="card" *ngFor="let pizza of myCart$ | async">
+                <img src="{{pizza.imageUrl}}" alt="" class="img1">
+                <div class="text">
+                    <h2>{{pizza.titulo}}</h2>
+                    <h3>${{pizza.precio}}</h3>
+                    <p>{{pizza.cantidad}}</p>
+                </div>
+                <div class="productCart-total">
+                    <p>${{totalProduct(pizza.precio, pizza.cantidad)}}</p>
+                </div>
+                <div class="productCart-buttons">
+                    <div class="productCart-buttons-operators">
+                        <i class="fa-solid fa-minus" (click)="updateUnits('minus', pizza.id)"></i>
+                        <span>{{pizza.cantidad}}</span>
+                        <i class="fa-solid fa-plus" (click)="updateUnits('add', pizza.id)"></i>
+                    </div>
+                    <i class="fa-solid fa-trash" (click)="deleteProduct(pizza.id)"></i>
+                </div>
+            </div>
+        </div>
+    </article>
+    <form [routerLink]="['/pedidos']">
+        <button type="button" class="btn" (click)="createOrder()">TERMINAR COMPRA</button>
+      </form>
+    <div class="cartTotal">
+        <p class="cartTotal-total">Total: $ {{totalCart()}}</p>
+    </div>
+</div>

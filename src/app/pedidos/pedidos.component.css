@@ -1,87 +1,56 @@
-.container {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: rgba(63, 58, 58, 0.825);
+/* Estilo para el formulario */
+form {
+  width: 100%;
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto;
+  padding: 20px 100px; /* Añade más espacio a los lados para hacerlo más ancho */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+/* Estilo para el encabezado */
+.form-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-
-h1 {
-    text-align: center;
-    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #e82828; 
-    background-color: #000000be;
-    padding: 20px; 
+/* Estilo para las etiquetas */
+.form-label {
+  font-weight: bold;
 }
 
-.formulario {
-    max-width: 400px; 
-    margin: 0 auto; 
-    padding: 20px; 
-    background-color: #fff; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
+/* Estilo para los campos de entrada */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.info {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc; 
-    border-radius: 3px; 
+/* Estilo para el desplegable */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-#sabores {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+/* Estilo para el botón de registro */
+.btn-register {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-#enviar {
-    width: 100%;
-    padding: 10px;
-    background-color: #e82828; 
-    color: #fff; 
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+.btn-register:hover {
+  background-color: #ff704d;
 }
-
-#enviar:hover {
-    background-color: #c71515; 
-}
-
-.logos-bottom {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(63, 58, 58, 0.825);  
-    padding: 10px; 
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-.logos-bottom .logo-left img {
-    max-width: 150px; 
-    height:auto; 
-    font-size: 14px; 
-}
-
-.logos-bottom .logo-middle img {
-    max-width: 100px; 
-    height: auto; 
-    font-size: 16px; 
-}
-
-.logos-bottom .logo-right img {
-    max-width: 100px; 
-    height: auto; 
-    font-size: 14px; 
-}
-
-
-
-
-

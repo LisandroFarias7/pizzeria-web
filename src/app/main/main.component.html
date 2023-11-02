@@ -1,22 +1,37 @@
-<div class="title">
-    <h1 class="title1">MENU</h1>
-</div>
-<div class="filtro">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Menu</title>
+  <link rel="stylesheet" type="text/css" href="main.component.css">
+</head>
+<body>
+  <div class="hero">
+    <h1 class="title1"></h1>
+  </div>
+  <div class="filtro">
     <h1>Filtro</h1>
     <input type="text" (keyup)="searchMenu( Textsearch.value )" #Textsearch placeholder="Buscar">
-</div>  
-    <div class="menu" >
-        <div class="card" *ngFor="let pizza of menu | filtro:page:search">
-            <img src="{{pizza.imageUrl}}" alt="" class="img1">
-            <div class="text">
-                <h2>{{pizza.titulo}}</h2>
-                <h3>{{pizza.descripcion}}</h3>
-                <h3>${{pizza.precio}}</h3>
-            </div>
+  </div>
+  <div class="menu" >
+    <!-- Agrega un fondo de hero a tu menú -->
+    <div class="menu-hero">
+      <!-- Contenido de tu menú -->
+      <div class="card" *ngFor="let pizza of menu | filtro:page:search">
+        <img src="{{pizza.imageUrl}}" alt="" class="img1">
+        <div class="text">
+          <h2>{{pizza.titulo}}</h2>
+          <h3>{{pizza.descripcion}}</h3>
+          <h3>${{pizza.precio}}</h3>
+          <button type="button" class="btn" (click)="addToCart(pizza)">AGREGAR AL CARRITO</button>
         </div>
+      </div>
     </div>
-<div class="btns">
-    <button type="button" (click)="prevPage()">ATRAS</button>
-    <button type="button" (click)="nextPage()" [disabled]="(menu | filtro:page:search).length === 0">SIGUIENTE</button>
-</div>
+  </div>
+  <div class="btns">
+    <button type="button" class="next" (click)="prevPage()">ATRAS</button>
+    <button type="button" class="next" (click)="nextPage()" [disabled]="(menu | filtro:page:search).length === 0">SIGUIENTE</button>
+  </div>
+</body>
+</html>
 

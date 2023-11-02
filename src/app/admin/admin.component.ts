@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../services/menu.service';
 import { Menu } from '../interfaces/menu';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-admin',
@@ -9,12 +10,12 @@ import { Menu } from '../interfaces/menu';
 })
 export class AdminComponent implements OnInit{
 
-    public menu: Menu[] = []
-
-    constructor(private menuServices: MenuService) {
+    public menu: Menu[] = [];
+    
+    constructor(private menuServices: MenuService, private toastr: ToastrService ) {
       
     }
-    ngOnInit(): void {
+    async ngOnInit(): Promise<void>{
       this.getAll()
     }
 
@@ -45,6 +46,7 @@ export class AdminComponent implements OnInit{
         .subscribe(
           res => {
             this.getAll()
+            this.toastr.success('Creado correctamente', 'Succefully');
           }
         )
     } 

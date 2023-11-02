@@ -6,6 +6,8 @@ import { MainComponent } from './main/main.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditComponent } from './admin/edit/edit.component';
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 const routes: Routes = [
@@ -36,6 +38,14 @@ const routes: Routes = [
  {
   path: 'admin/edit/:id',
   component: EditComponent
+ },
+ {
+  path: 'about',
+  component: AcercaDeComponent
+ },
+ {
+  path: 'lista',
+  component: RegistroComponent
  }
 ];
 

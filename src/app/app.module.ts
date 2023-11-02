@@ -16,6 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import  { ToastrModule } from 'ngx-toastr' ;
+import  { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
+import { CartComponent } from './cart/cart.component';
+import { RegistroComponent } from './registro/registro.component' ;
 
 @NgModule({
   declarations: [
@@ -27,7 +32,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PedidosComponent,
     AdminComponent,
     FiltroPipe,
-    EditComponent
+    EditComponent,
+    AcercaDeComponent,
+    CartComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

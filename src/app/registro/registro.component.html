@@ -1,0 +1,42 @@
+<h2>PEDIDOS</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>TELEFONO</th>
+                <th>DIRECCION</th>
+                <th>CONFIRMACION</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let client of listClient">
+            <tr>
+                <td>{{client.name}}</td>
+                <td>{{client.lastname}}</td>
+                <td>{{client.mobile}}</td>
+                <td>{{client.address}}</td>
+                <td><input type="checkbox" name="id" id="" (click)="deleteClient(client.id)"></td>
+            </tr>
+        <tbody>
+    </table>
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>PEDIDO</th>
+                <th>CANTIDAD</th>
+                <th>PRECIO</th>
+                <th>CONFIRMACION</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let pedido of listPedido">
+            <tr>
+                <td>{{pedido.titulo}}</td>
+                <td>{{pedido.cantidad}}</td>
+                <td>{{pedido.precio}}</td>
+                <td><input type="checkbox" name="id" (click)="deleteOrder(pedido.id)"></td>
+            </tr>
+        <tbody>
+    </table>
+</div>
