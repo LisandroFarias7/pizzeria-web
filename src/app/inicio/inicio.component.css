@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kanit:ital@1&display=swap');
 /* Estilos generales */
 h1 {
-  font-family: 'EDU TAS Beginner', sans-serif;
-  font-size: 36px;
+  font-family: 'Caveat', cursive;
+  font-family: 'Kanit', sans-serif;
+  font-size: 40px;
   color: #8b2008;
 }
 
 p {
-  font-family: 'EDU TAS Beginner', sans-serif;
+  font-family: 'Caveat', cursive;
   font-size: 18px;
   color: #fff;
   font-size: 28px;
@@ -32,7 +34,7 @@ section {
 
 .pizza-img {
   flex: 1;
-  background: url('../../assets/img/pizza-fondo.jpg') center/cover no-repeat;
+  background: url('../../assets/img/foton_pizzas.jpg') center/cover no-repeat;
   padding: 0;
 }
 
@@ -103,35 +105,8 @@ header h1 {
   justify-content: center;
 }
 
-/* Estilos para el hero */
-.hero {
-  background-image: url('../../assets/img/big0000.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  text-align: center;
-  height: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Estilo del título en el hero */
-.hero h1 {
-  font-family: 'EDU TAS Beginner', sans-serif;
-  font-size: 36px;
-  color: #f8f8f8;
-  margin: 0;
-}
 
-/* Estilo del párrafo en el hero */
-.hero p {
-  font-family: 'EDU TAS Beginner', sans-serif;
-  font-size: 18px;
-  color: #fff;
-  font-size: 28px;
-  margin: 20px;
-}
 
 /* Estilo para el gráfico "Tentate" y "Sale Delivery" */
 .rounded-box a.button {

@@ -1,16 +1,20 @@
-<div class="container">
-    <div class="logo">
-        <img src="../../assets/img/pngwing.com (1).png" alt="" srcset="" class="logo-img">
-    </div>
-    <div class="navbar">
-        <a routerLink="/inicio" class="nav1">INICIO</a>
-        <a routerLink="/menu" class="nav2">MENU</a>
-        <a routerLink="/about" class="nav4">ACERCA DE</a>
-        <div class="navbar-cart" (click)="onToggleCart()">
-            <i class="fa-solid fa-cart-shopping"></i>
+<div class="banner">
+    <video muted autoplay loop id="video-background" class="video-background">
+        <source muted autoplay loop src="../../assets/video/Prova-2-Munaciello.mp4" type="video/mp4">
+    </video>
+    <div class="banner-content">
+        <div class="logo">
+            <img src="../../assets/img/pngwing.com (1).png" alt="" srcset="" class="logo-img">
+        </div>
+        <div class="navbar">
+            <a routerLink="/inicio" class="nav1" href="#menu">INICIO</a>
+            <a routerLink="/menu" class="nav2">MENU</a>
+            <a routerLink="/about" class="nav4">ACERCA DE</a>
+            <div class="navbar-cart" (click)="onToggleCart()">
+             <i class="fa-solid fa-cart-shopping"></i>
+            </div>
         </div>
     </div>
-</div>
 <div class="cart" [ngClass]="{show: viewCart}">
     <app-cart></app-cart>
 </div>

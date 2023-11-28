@@ -1,42 +1,69 @@
 <h2>PEDIDOS</h2>
-<div class="table-wrapper">
-    <table class="fl-table">
-        <thead>
-            <tr>
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
-                <th>TELEFONO</th>
-                <th>DIRECCION</th>
-                <th>CONFIRMACION</th>
-
-            </tr>
-        </thead>
-        <tbody *ngFor="let client of listClient">
-            <tr>
-                <td>{{client.name}}</td>
-                <td>{{client.lastname}}</td>
-                <td>{{client.mobile}}</td>
-                <td>{{client.address}}</td>
-                <td><input type="checkbox" name="id" id="" (click)="deleteClient(client.id)"></td>
-            </tr>
-        <tbody>
-    </table>
-    <table class="fl-table">
-        <thead>
-            <tr>
-                <th>PEDIDO</th>
-                <th>CANTIDAD</th>
-                <th>PRECIO</th>
-                <th>CONFIRMACION</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let pedido of listPedido">
-            <tr>
-                <td>{{pedido.titulo}}</td>
-                <td>{{pedido.cantidad}}</td>
-                <td>{{pedido.precio}}</td>
-                <td><input type="checkbox" name="id" (click)="deleteOrder(pedido.id)"></td>
-            </tr>
-        <tbody>
-    </table>
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<!-- component -->
+<div class="flex items-center justify-center min-h-screen bg-gray-900">
+	<div class="col-span-12">
+		<div class="overflow-auto lg:overflow-visible ">
+			<table class="table text-gray-400 border-separate space-y-6 text-sm">
+				<thead class="bg-gray-800 text-gray-500">
+					<tr>
+						<th class="p-3">Nombre</th>
+						<th class="p-3 text-left">Precio/Telefono</th>
+						<th class="p-3 text-left">Descripcion/mail</th>
+						<th class="p-3 text-left">Listo</th>
+					</tr>
+				</thead>
+				<tbody *ngFor="let client of listClient">
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<div class="ml-3">
+									<div class="">{{client.name}} {{client.lastname}}</div>
+									<div class="text-gray-500">{{client.address}}</div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							{{client.mobile}}
+						</td>
+						<td class="p-3 font-bold">
+							{{client.email}}
+						</td>
+						<td class="p-3">
+							<a class="text-gray-400 hover:text-gray-100 ml-2" (click)="deleteClient(client.id)">
+								<i class="material-icons-round text-base">delete_outline</i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+                <tbody *ngFor="let pedido of listPedido">
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+                                <img class="rounded-full h-12 w-12  object-cover" src="{{pedido.imageUrl}}" alt="unsplash image">
+								<div class="ml-3">
+									<div class="">{{pedido.titulo}}</div>
+									<div class="text-gray-500">{{pedido.cantidad}}</div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							{{pedido.precio}}
+						</td>
+						<td class="p-3 font-bold">
+							{{pedido.descripcion}}
+						</td>
+						<td class="p-3">
+							<a class="text-gray-400 hover:text-gray-100 ml-2" (click)="deleteOrder(pedido.id)">
+								<i class="material-icons-round text-base">delete_outline</i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>

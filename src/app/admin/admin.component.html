@@ -10,6 +10,7 @@
                 <h3>{{pizza.descripcion}}</h3>
                 <h3>${{pizza.precio}}</h3>
                 <button type="button" class="btn" (click)="deleteMenu(pizza.id)">ELIMINAR</button>
+                <button type="button" class="btn" [routerLink]="['/admin/edit', pizza.id]">EDITAR</button>
             </div>
         </div>
     </div>

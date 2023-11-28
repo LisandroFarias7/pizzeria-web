@@ -1,17 +1,3 @@
-
-
-.hero {
-  background-image: url("../../assets/img/big0000.jpg");
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  height: 30vh;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 h1 {
   font-size: 4vh;
   text-transform: uppercase;
@@ -48,6 +34,11 @@ h1 {
   border: 5px solid #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.1);
 }
 
 h2 {
@@ -70,3 +61,4 @@ p {
 .reversed-section .image {
   order: 1;
 }
+
